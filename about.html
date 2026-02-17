@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Artist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="about.html" class="nav-link active">About</a>
+        </div>
+    </nav>
+
+    <main class="about-container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="info_page_photo.jpg" alt="Artist Photo">
+            </div>
+            <div class="about-text">
+                <h1>About the Artist</h1>
+                <p class="bio">
+                    James Annable is an acrylic painter who works out of his home studio in Vancouver, BC.
+                </p>
+                <p class="bio">
+                    He has received instruction at Emily Carr University as well as from several independent studios within Vancouver. He enjoys creating still life paintings that reconsider familiar items using unexpected compositions and repetition.
+                </p>
+
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p class="contact-description">Have a question? Send me a message below.</p>
+
+                    <form action="https://formspree.io/f/mbdayaqg" method="POST" class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Send Message</button>
+
+                        <div class="form-status" id="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
