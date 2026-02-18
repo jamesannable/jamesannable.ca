@@ -94,7 +94,7 @@ body {
     top: 0;
     background: #faf6f0;
     border-bottom: 1px solid #e0e0e0;
-    padding: 20px 0;
+    padding: 12px 0;
     z-index: 200;
 }
 
@@ -123,24 +123,62 @@ body {
 /* ===== GALLERY PAGE ===== */
 .gallery-header {
     background-color: #faf6f0;
-    padding: 25px 40px 15px;
+    padding: 15px 40px 5px;
     text-align: left;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .artist-name {
-    font-family: 'Impact', 'Arial Black', sans-serif;
-    font-size: 42px;
-    font-weight: 900;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
     letter-spacing: 3px;
     color: #1a1a1a;
     margin: 0;
     text-transform: uppercase;
+    line-height: 1;
+}
+
+.gallery-scrollbar-track {
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: transparent;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    scrollbar-width: thin;
+    scrollbar-color: #a89580 #e8e0d6;
+    position: relative;
+    z-index: 101;
+}
+
+.gallery-scrollbar-track.visible {
+    opacity: 1;
+}
+
+.gallery-scrollbar-track:hover {
+    opacity: 1;
+}
+
+.gallery-scrollbar-track::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-scrollbar-track::-webkit-scrollbar-track {
+    background: #e8e0d6;
+}
+
+.gallery-scrollbar-track::-webkit-scrollbar-thumb {
+    background-color: #a89580;
+    border-radius: 4px;
+}
+
+.gallery-scrollbar-inner {
+    height: 1px;
 }
 
 .gallery-container {
-    height: calc(100vh - 170px);
+    height: calc(100vh - 140px);
     padding: 0;
     background-color: #faf6f0;
     position: relative;
@@ -148,6 +186,11 @@ body {
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
+    scrollbar-width: none;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
 }
 
 .gallery-grid {
@@ -155,19 +198,24 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    gap: 55px;
-    padding: 40px 40px 140px 40px;
+    gap: 69px;
+    padding: 40px 0 140px 40px;
     flex: 1;
-    overflow-x: auto;
+}
+
+.gallery-spacer {
+    flex-shrink: 0;
+    width: 60px;
+    height: 1px;
 }
 
 .gallery-floor {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    margin-top: -120px;
     width: 100%;
     height: 120px;
+    pointer-events: none;
+    z-index: 100;
     background: linear-gradient(to bottom,
         #b8a690 0%,
         #a89580 20%,
@@ -455,7 +503,7 @@ body {
     }
 
     .gallery-header {
-        padding: 20px 20px 15px;
+        padding: 10px 20px 5px;
     }
 
     .artist-name {
@@ -468,7 +516,7 @@ body {
     }
 
     .gallery-grid {
-        gap: 30px;
+        gap: 38px;
         padding: 20px 20px 140px 20px;
     }
 

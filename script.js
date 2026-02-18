@@ -96,6 +96,64 @@ if (document.getElementById('gallery')) {
 
         gallery.appendChild(item);
     });
+
+    // Add spacer at end of gallery
+    const spacer = document.createElement('div');
+    spacer.className = 'gallery-spacer';
+    gallery.appendChild(spacer);
+}
+
+// ===== MOUSE WHEEL HORIZONTAL SCROLL & TOP SCROLLBAR =====
+if (document.querySelector('.gallery-container')) {
+    const galleryContainer = document.querySelector('.gallery-container');
+    const scrollbarTrack = document.querySelector('.gallery-scrollbar-track');
+    const scrollbarInner = document.querySelector('.gallery-scrollbar-inner');
+
+    // Mouse wheel horizontal scroll
+    galleryContainer.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            galleryContainer.scrollLeft += e.deltaY;
+        }
+    }, { passive: false });
+
+    // Sync top scrollbar width to match gallery scroll width
+    function syncScrollbarSize() {
+        scrollbarInner.style.width = galleryContainer.scrollWidth + 'px';
+    }
+
+    // Show scrollbar on scroll, hide after delay
+    let scrollTimeout;
+    function showScrollbar() {
+        scrollbarTrack.classList.add('visible');
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            scrollbarTrack.classList.remove('visible');
+        }, 1000);
+    }
+
+    // Sync scroll positions between the two elements
+    let syncing = false;
+    galleryContainer.addEventListener('scroll', () => {
+        showScrollbar();
+        if (!syncing) {
+            syncing = true;
+            scrollbarTrack.scrollLeft = galleryContainer.scrollLeft;
+            syncing = false;
+        }
+    });
+    scrollbarTrack.addEventListener('scroll', () => {
+        if (!syncing) {
+            syncing = true;
+            galleryContainer.scrollLeft = scrollbarTrack.scrollLeft;
+            syncing = false;
+        }
+    });
+
+    // Set initial size after images load
+    syncScrollbarSize();
+    window.addEventListener('load', syncScrollbarSize);
+    window.addEventListener('resize', syncScrollbarSize);
 }
 
 // ===== LIGHTBOX FUNCTIONALITY =====
