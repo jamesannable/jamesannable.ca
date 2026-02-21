@@ -53,21 +53,9 @@ if (document.getElementById('gallery')) {
         const item = document.createElement('div');
         item.className = 'gallery-item';
 
-        // Determine relative size based on physical artwork dimensions
-        // This affects display size but NOT aspect ratio
-        const area = artwork.width * artwork.height;
-        let displayWidth;
-
-        // Size categories based on physical area
-        if (area >= 600) { // Large pieces (24x30, 24x24, etc)
-            displayWidth = 240;
-        } else if (area >= 250) { // Medium pieces (18x24, 20x24, etc)
-            displayWidth = 180;
-        } else if (area >= 100) { // Small pieces (12x16, etc)
-            displayWidth = 140;
-        } else { // Tiny pieces (6x8, etc)
-            displayWidth = 100;
-        }
+        // Scale display width by physical area (sqrt gives proportional visual weight)
+        // 9px per unit gives ~240px for largest works; minimum 80px for small pieces
+        const displayWidth = Math.max(80, Math.round(Math.sqrt(artwork.width * artwork.height) * 9));
 
         // Stagger the fade-in animation
         item.style.animationDelay = `${index * 0.05}s`;
