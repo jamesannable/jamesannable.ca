@@ -36,13 +36,22 @@ const artworks = [
     { title: "Marlboros", year: 2022, dimensions: "8 x 10 inches", width: 8, height: 10, medium: "acrylic on paper" },
     { title: "Taking a Break", year: 2023, dimensions: "9 x 12 inches", width: 9, height: 12, medium: "acrylic on canvas" },
     { title: "Self Portrait I", year: 2022, dimensions: "8 x 12 inches", width: 8, height: 12, medium: "acrylic on canvas" },
+    { title: "Summer Groceries", year: 2018, dimensions: "9 x 12 inches", width: 9, height: 12, medium: "acrylic on paper" },
     { title: "Three Buddies II", year: 2017, dimensions: "9 x 12 inches", width: 9, height: 12, medium: "acrylic on paper" },
     { title: "untitled", year: 2015, dimensions: "12 x 20 inches", width: 12, height: 20, medium: "acrylic on paper" },
     { title: "Peony", year: 2021, dimensions: "6 x 8 inches", width: 6, height: 8, medium: "acrylic on paper" },
     { title: "Rose", year: 2021, dimensions: "6 x 8 inches", width: 6, height: 8, medium: "acrylic on paper" },
     { title: "Weigelas", year: 2021, dimensions: "6 x 8 inches", width: 6, height: 8, medium: "acrylic on paper" },
     { title: "Three Buddies III", year: 2021, dimensions: "12 x 20 inches", width: 12, height: 20, medium: "acrylic on paper" },
-    { title: "Self Portrait IV", year: 2026, dimensions: "6 x 8 inches", width: 6, height: 8, medium: "acrylic on wood panel" }
+    { title: "Self Portrait IV", year: 2026, dimensions: "6 x 8 inches", width: 6, height: 8, medium: "acrylic on wood panel" },
+    { title: "Strange Loop", year: 2026, dimensions: "11 x 14 inches", width: 11, height: 14, medium: "acrylic on canvas" },
+    { title: "Seascape", year: 2024, dimensions: "12 x 20 inches", width: 12, height: 20, medium: "acrylic on paper" },
+    { title: "Control Panel", year: 2024, dimensions: "12 x 16 inches", width: 12, height: 16, medium: "acrylic on paper" },
+    { title: "Laundry", year: 2024, dimensions: "4 x 4 inches", width: 4, height: 4, medium: "acrylic on wood panel" },
+    { title: "Can Abstraction", year: 2024, dimensions: "4 x 4 inches", width: 4, height: 4, medium: "acrylic on wood panel" },
+    { title: "Happy Bday", year: 2024, dimensions: "6 x 8 inches", width: 6, height: 8, medium: "acrylic on paper" },
+    { title: "Seascape Triptych", year: 2021, dimensions: "12 x 20 inches", width: 12, height: 20, medium: "acrylic on paper" },
+    { title: "untitled2", year: 2015, dimensions: "9 x 12 inches", width: 9, height: 12, medium: "acrylic on paper" }
 ].sort((a, b) => b.year - a.year); // Sort by year, newest first
 
 // ===== GENERATE GALLERY =====
