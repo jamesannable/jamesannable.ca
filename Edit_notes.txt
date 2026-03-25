@@ -1,0 +1,6 @@
+Adjust scroll bar so it shows up better on Mac?
+Make images more true to relative sizes
+Add colour to top section of page?
+Refine into animation
+Add a 'see all' gallery button?
+Add a copyright thing
