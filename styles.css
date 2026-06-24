@@ -196,7 +196,7 @@ body {
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    gap: 69px;
+    gap: 138px;
     padding: 40px 0 140px 40px;
     flex: 1;
 }
@@ -524,7 +524,7 @@ body {
     }
 
     .gallery-grid {
-        gap: 38px;
+        gap: 76px;
         padding: 20px 20px 140px 20px;
     }
 
